@@ -20,6 +20,7 @@
                     <tr class="border-b">
                         <th class="text-left p-3 px-5">Task</th>
                         <th class="text-left p-3 px-5">User</th>
+                        <th class="text-left p-3 px-5">Category</th>
                         <th class="text-left p-3 px-5">Actions</th>
                         <th></th>
                     </tr>
@@ -33,6 +34,10 @@
 
                             <td class="p-3 px-5">Created by:
                                 {{$task->user->name}}
+                            </td>
+
+                            <td class="p-3 px-5">category:
+                                {{$task->category_id}}
                             </td>
 
 
