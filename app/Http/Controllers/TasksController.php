@@ -10,7 +10,7 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = auth()->user()->tasks();
-        return view('dashboard', compact('tasks'));
+        return view('tasks.dashboard', compact('tasks'));
     }
     public function add()
     {
@@ -26,7 +26,7 @@ class TasksController extends Controller
     	$task->description = $request->description;
     	$task->user_id = auth()->user()->id;
     	$task->save();
-    	return redirect('/dashboard'); 
+    	return redirect('/tasks.dashboard'); 
     }
 
     public function edit(Task $task)
@@ -37,7 +37,7 @@ class TasksController extends Controller
                 return view('edit', compact('task'));
         }           
         else {
-             return redirect('/dashboard');
+             return redirect('/tasks.dashboard');
          }            	
     }
 
@@ -45,7 +45,7 @@ class TasksController extends Controller
     {
     	if(isset($_POST['delete'])) {
     		$task->delete();
-    		return redirect('/dashboard');
+    		return redirect('/tasks.dashboard');
     	}
     	else
     	{
@@ -54,7 +54,7 @@ class TasksController extends Controller
             ]);
     		$task->description = $request->description;
 	    	$task->save();
-	    	return redirect('/dashboard'); 
+	    	return redirect('/tasks.dashboard'); 
     	}    	
     }
 }
