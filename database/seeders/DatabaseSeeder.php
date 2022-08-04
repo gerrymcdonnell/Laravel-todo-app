@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Task;
+use App\Models\Category;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -29,6 +31,11 @@ class DatabaseSeeder extends Seeder
             'description'=>'first task sample1',
 	        'user_id'=>1,
             'category_id'=>0
+        ]);
+
+        Category::factory()->create([
+            'description'=>'first task sample1',
+            'title'=>'first category'
         ]);
     }
 }
