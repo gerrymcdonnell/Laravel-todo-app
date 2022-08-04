@@ -15,11 +15,17 @@ use App\Http\Controllers\TasksController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+
+Route::get('/',[TasksController::class, 'index'])->name('dashboard');
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    
     Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
 
     Route::get('/task',[TasksController::class, 'add']);
