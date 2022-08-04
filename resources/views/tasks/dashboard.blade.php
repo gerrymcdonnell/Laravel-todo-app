@@ -37,7 +37,7 @@
                             </td>
 
                             <td class="p-3 px-5">category:
-                                {{$task->category_id}}
+                                {{dump($task)}}
                             </td>
 
 

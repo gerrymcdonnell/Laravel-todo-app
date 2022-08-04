@@ -9,7 +9,12 @@ class TasksController extends Controller
 {
     public function index()
     {
+        //orig
         $tasks = auth()->user()->tasks();
+
+        //how to grab the categories as well
+        //$tasks = auth()->user()->tasks()->categories();
+
         return view('tasks.dashboard', compact('tasks'));
     }
     public function add()
